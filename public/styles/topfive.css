@@ -1,0 +1,90 @@
+.crypto-main-box {
+    height: 90%;
+    width: 100%;
+}
+
+.crypto-box {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white; /* Add white border around the element */
+    box-sizing: border-box; /* Include border in element's total width and height */
+    width: 50%;
+    height: 50px;
+    border-radius: 3px;
+}
+
+.crypto-img {
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.crypto-name, .crypto-price {
+    margin: 0;
+    color: white;
+    margin: 7px;
+    margin-left: 10px;
+}
+
+.crypto-price {
+    margin: 13px;
+    margin-left: auto;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.hover-target, .days {
+    height: 25px;
+    width: 105px;
+    border-radius: 3px;
+    margin: 6px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Hidden Field Styles */
+.hidden-field, .hidden-time-field {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:white;
+    /* color: white; */
+    color: black;
+    padding: 4px;
+    border: 1px solid black;
+    z-index: 10000;
+    border-radius: 5px;
+}
+
+.hidden-time-field {
+    width: 130px;
+    height: auto;
+}
+
+p {
+    margin: 4px;
+}
+
+/* Show Hidden Field on Hover */
+.hover-target:hover .hidden-field, .days:hover .hidden-time-field {
+    display: block;
+}
+
+.days {
+    width: 60px;
+}

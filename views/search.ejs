@@ -1,0 +1,8 @@
+<%- include("partials/navbar.ejs") %>
+<div class="form-search">
+    <form class="search-space" action="/crypto-search" method="post">
+        <input class="search-input" type="text" name="search" placeholder="Search for a cryptocurrency...">
+        <button class="submit-button" type="submit">Search</button>
+    </form>
+</div>
+<%-include("partials/footer.ejs") %>

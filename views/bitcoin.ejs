@@ -1,0 +1,63 @@
+
+    <%- include("partials/navbar.ejs")%>
+    <div class="crypto-main-box">
+        <div class="crypto-box">
+            <img class="crypto-img" src="images/<%=image %>.png">
+            <h1 class="crypto-name"><%=name%></h1>
+            <h2 class="crypto-price green">$ <%=price%></h2>
+        </div>
+
+        <div class="crypto-hidden">
+            <div class="hover-target">
+                <p>All Time High</p>
+                <div class="hidden-field">
+                    <p class="crypto-ath green">$ <%=ath%></p>
+                    <p class="crypto-atl red"><%=ath_per%>%</p>
+                    <p class="crypto-price green"><%=ath_date%></p>
+                </div>
+            </div>
+    
+            <div class="hover-target">
+                <p>All Time Low</p>
+                <div class="hidden-field">
+                    <p class="crypto-ath green">$ <%=atl%></p>
+                    <p class="crypto-atl red"><%=atl_per%>%</p>
+                    <p class="crypto-price green"><%=atl_date%></p>
+                </div>
+            </div>
+        </div>
+        <div class="time-hover-target">
+            <div class="days">
+                <p>24hours</p>
+                <div class="hidden-time-field">
+                    <p class="24h-high">24hours high: $<%=high%></p>
+                    <p class="24h-low">24hours low: $<%=low%></p>
+                </div>
+            </div>
+            <div class="days">
+                <p>7 days</p>
+                <div class="hidden-time-field">
+                    <p class="7days">Price change percentage in 7 days: <%= seven %> %</p>
+                   
+                </div>
+            </div>
+            <div class="days">
+                <p>30 days</p>
+                <div class="hidden-time-field">
+                    <p class="7days">Price change percentage in 30 days: <%= thirty %> %</p>
+                   
+                </div>
+            </div>
+            <div class="days">
+                <p>1 years</p>
+                <div class="hidden-time-field">
+                    <p class="7days">Price change percentage in 1 years: <%= oneyear %> %</p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="extra-features/loss_profit.js"></script>
+</body>
+</html>

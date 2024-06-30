@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/cryptocoin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title><%= cryptocoin.symbol %></title>
+    <link rel="icon" href="<%= cryptocoin.thumb %>"> 
+</head>
+<body>
+    <div class="main-coin-box">
+        <div class="design">
+            <div class="circle1 circle"></div>
+            <div class="circle2 circle"></div>
+            <div class="circle3 circle"></div>
+            <div class="circle4 circle"></div>
+            <div class="circle5 circle"></div>
+        </div>
+        <div class="coin-info-box">
+            <img class="cryptoimg" rel="icon" src="<%= cryptocoin.large %>">
+            <h2><%= cryptocoin.name %></h2>
+            <p id="currentPrice"><%= info.current_price.usd %></p>
+        </div>
+        <!-- <canvas id="myChart"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Sample Data',
+                    data: graphone,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script> -->
+    </div>
+    <canvas id="myChart"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Sample Data',
+                    data: 
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentPriceElement = document.getElementById("currentPrice");
+            const currentPrice = parseFloat(currentPriceElement.textContent);
+            console.log("Current Price:", currentPrice);
+            const previousPric = <%= previousPrice %>; // Dynamically pass previous price
+            console.log("Previous Price:", previousPric);
+
+            if (currentPrice < previousPric) {
+                currentPriceElement.style.color = "red";
+            } else if (currentPrice > previousPric) {
+                currentPriceElement.style.color = "green";
+            }
+        });
+    </script>
+</

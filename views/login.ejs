@@ -1,0 +1,11 @@
+<%- include("../views/partials/header.ejs") %>
+
+    <div class="register">
+        <form action="/main" class="login_page" method="POST">
+            <input type="text" class="last-name" placeholder="Enter your First Name" name="first_name">
+            <input type="password" class="password" placeholder="Enter your password" name="password">
+            <button type="submit" class="submit">Log In</button>
+        </form>
+    </div>
+
+    <%- include("../views/partials/footer.ejs") %>

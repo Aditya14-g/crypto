@@ -1,0 +1,51 @@
+.form-search {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Add blur effect to the entire form-search container */
+}
+
+.search-space {
+    background-color: rgba(246, 242, 242, 0.47);
+    height: 50%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px); /* Apply blur effect inside the search space */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better contrast */
+}
+
+.search-input {
+    font-size: 22px;
+    width: 80%;
+    height: 10%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Optional: Add a border for better contrast */
+    padding: 10px; /* Add padding for better spacing */
+}
+
+.submit-button {
+    border-radius: 8px;
+    height: 10%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff; /* Add a background color to the button */
+    color: white; /* Change text color to white */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px; /* Add padding for better spacing */
+    font-size: 25px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
