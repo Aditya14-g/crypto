@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(255, 183, 183), rgb(255, 121, 121));
+}
+
+.main-box {
+    background-color: white;
+    color: red;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    border: 1px solid;
+    box-shadow: 5px 8px 18px rgb(133, 79, 79);
+    border-radius: 30px;
+}
+
+.main-box form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-box input {
+    width: 100%;
+    height: 40px;
+    border-radius: 9px;
+    margin-top: 10px;
+    background-color: #eee;
+    border: none;
+    font-size: 13px;
+    outline: none;
+    padding: 0 15px;
+}
+
+.main-box button {
+    border: none;
+    height: 40px;
+    width: 70%;
+    background-color: #ef1010;
+    color: white;
+    border-radius: 9px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    outline: none;
+}
+
+.main-box h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.same {
+    left: 0;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 60px;
+    transition: all 0.6s ease-in-out;
+}
+
+.register {
+    opacity: 1;
+    z-index: 2;
+}
+
+.guest,
+.login {
+    opacity: 0;
+    z-index: 1;
+}
+
+.register-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.toggle {
+    background-color: rgb(252, 37, 37);
+    height: 100%;
+    background: linear-gradient(to right, #ff3a3a, #ff0f0f);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    display: flex;
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-panel {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    height: 100%;
+}
+
+.toggle-left,
+.toggle-middle,
+.toggle-right {
+    transform: translateX(0);
+}
+
+.main-box.active .toggle {
+    transform: translateX(-33.33%);
+}
+
+.main-box.active-guest .toggle {
+    transform: translateX(-66.66%);
+}
+
+.main-box.active .register {
+    opacity: 0;
+    z-index: 1;
+}
+
+.main-box.active .login {
+    opacity: 1;
+    z-index: 2;
+}
+
+.main-box.active-guest .login {
+    opacity: 0;
+    z-index: 1;
+}
+
+.main-box.active-guest .guest {
+    opacity: 1;
+    z-index: 2;
+}

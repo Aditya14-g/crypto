@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mycrypto</title>
+    <link rel="stylesheet" href="styles/mycryptologin.css">
+</head>
+<body>
+    <div class="main-box">
+        <div class="same register">
+            <h1>Register</h1>
+            <form action="/game" method="post" class="register-form">
+                <input type="text" placeholder="Enter your name" class="name-box" name="username"/>
+                <input type="date" class="date" name="date"/>
+                <input type="password" placeholder="Enter your password" class="userpassword" name="password"/>
+                <input type="password" placeholder="Confirm password" class="userpassword" name="confirmPassword"/>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+        <div class="same login">
+            <h1>Login</h1>
+            <form action="/game" method="post" class="login-form">
+                <input type="text" placeholder="Enter your name" class="name-box" name="username">
+                <input type="password" placeholder="Enter your password" class="userpassword" name="password">
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+        <div class="same guest">
+            <h1>This is guest account</h1>
+            <p>Your data will not be saved</p>
+            <button type="submit" class="submit-btn">Guest</button>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-middle">
+                    <h1>Welcome Back</h1>
+                    <p>To login click here</p>
+                    <button class="hidden" id="login">Login</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, guest!</h1>
+                    <p>Data will not be saved here</p>
+                    <button class="hidden" id="guest">Guest</button>
+                </div>
+                <div class="toggle-panel toggle-left">
+                    <h1>Hello</h1>
+                    <p>If you want to register click here</p>
+                    <button class="hidden" id="register">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="extra/hidden.js"></script>
+</body>
+</html>

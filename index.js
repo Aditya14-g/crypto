@@ -104,18 +104,23 @@ app.post("/crypto-search", async (req, res) => {
     let priceone=await(await fetch(`https://api.coingecko.com/api/v3/coins/${cryptoCoins.id}/market_chart?vs_currency=usd&days=1`)).json();
     let graphone=[];
     for(let i=0;i<priceone.prices.length;i++){
-        console.log(priceone.prices[i][1]);
+        // console.log(priceone.prices[i][1]);
         graphone.push(priceone.prices[i][1]);
     }
     
     res.render("crypto-search.ejs", {
         cryptocoin: cryptoCoins,
         info: bit.market_data,
-        previousPrice: bit.market_data.current_price.usd, // Assuming you are comparing it with the current price.
+        previousPric: bit.market_data.current_price.usd, // Assuming you are comparing it with the current price.
         graphone: graphone 
     });
 });
-
+app.get("/Mycrypto",(req,res)=>{
+    res.render("Page/mycryptologin.ejs");
+})
+app.get("/about",(req,res)=>{
+    res.render("aboutme.ejs");
+})
 app.listen(port, () => {
     console.log("Connected to the port.");
 });

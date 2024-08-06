@@ -85,11 +85,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 100vh;
     margin: 0;
     background-color: #f4f4f9;
 }
+.graph-crypto{
+    width: 80%;
+    height: 50%;
+}
+
 #myChart {
     width: 80%;
     max-width: 600px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-left: 30%;
+    height: 50%;
 }

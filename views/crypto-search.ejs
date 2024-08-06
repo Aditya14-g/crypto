@@ -24,72 +24,79 @@
             <h2><%= cryptocoin.name %></h2>
             <p id="currentPrice"><%= info.current_price.usd %></p>
         </div>
-        <!-- <canvas id="myChart"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Sample Data',
-                    data: graphone,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    fill: true,
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script> -->
-    </div>
-    <canvas id="myChart"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Sample Data',
-                    data: 
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    fill: true,
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const currentPriceElement = document.getElementById("currentPrice");
-            const currentPrice = parseFloat(currentPriceElement.textContent);
-            console.log("Current Price:", currentPrice);
-            const previousPric = <%= previousPrice %>; // Dynamically pass previous price
-            console.log("Previous Price:", previousPric);
+        <div class="graph-crypto">
+            <canvas id="myChart" width="800" height="400"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    const graphData = <%= JSON.stringify(graphone) %>;
+                    console.log('Graph Data:', graphData);  // Debugging line to check data
 
-            if (currentPrice < previousPric) {
-                currentPriceElement.style.color = "red";
-            } else if (currentPrice > previousPric) {
-                currentPriceElement.style.color = "green";
-            }
-        });
-    </script>
-</
+                    const labels = Array.from({ length: 24 }, (_, i) => i);
+                    console.log('Labels:', labels);  // Debugging line to check labels
+
+                    const maxy = Math.max(...graphData);
+                    const miny = Math.min(...graphData);
+
+                    const myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Price Data',
+                                data: graphData,
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1,
+                                fill: true,
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Hours'
+                                    }
+                                },
+                                y: {
+                                    min: miny,
+                                    max: maxy,
+                                    beginAtZero: false,
+                                    title: {
+                                        display: true,
+                                        text: 'Price (USD)'
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'top'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Cryptocurrency Price Data (Last 24 Hours)'
+                                }
+                            }
+                        }
+                    });
+
+                    const currentPriceElement = document.getElementById("currentPrice");
+                    const currentPrice = parseFloat(currentPriceElement.textContent);
+                    console.log("Current Price:", currentPrice);
+                    const previousPrice = <%= previousPric %>; // Dynamically pass previous price
+                    console.log("Previous Price:", previousPrice);
+
+                    if (currentPrice < previousPrice) {
+                        currentPriceElement.style.color = "red";
+                    } else if (currentPrice > previousPrice) {
+                        currentPriceElement.style.color = "green";
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>

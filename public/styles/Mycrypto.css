@@ -1,0 +1,84 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.main-box {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.heading-box {
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-box h1 {
+    display: flex;
+    border: 1px solid white;
+    width: 30%;
+    border-radius: 9px;
+    justify-content: center;
+    height: 90%;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.dropdown-button {
+    display: block;
+    width: 40%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+
+}
+
+.dropdown-content {
+    display: none;
+    width: 60%;
+    max-height: auto;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #474444;
+    padding: 0 10px;
+    border-radius: 2px;
+}
+
+.dropdown-content p {
+    margin: 10px 0;
+}
+
+.show {
+    display: block;
+    max-height: 1000px; /* Arbitrary large value to allow smooth transition */
+}
+
+.progress-btn{
+    width: 40%;
+    background-color: rgb(245, 138, 56);
+    border-radius: 8px;
+    margin-top:20px ;
+    height: 40px;
+    border: 0;
+}
